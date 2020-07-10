@@ -19,12 +19,13 @@ def deEmojify(text):
                            "]+", flags = re.UNICODE)
     return regrex_pattern.sub(r'',text)
 # create a file to store the parsed comments
-if os.path.isfile('sexually_explicit.txt'):
-    f = open("sexually_explicit.txt", "a+", encoding = 'utf-8')
+if os.path.isfile('output.txt'):
+    f = open("output.txt", "a+", encoding = 'utf-8')
 else:
-    f = open("sexually_explicit.txt", "w+", encoding = 'utf-8') 
+    f = open("output.txt", "w+", encoding = 'utf-8') 
 # giving in credentials for accessing the reddit data   
 # refer the readme to access your credentials
+# register though the given link and then fill in your credentials
 reddit = praw.Reddit(user_agent="Comment Extraction (by /u/USERNAME)",
                       client_id="14 digit code", client_secret="27 digit code",
                       username="user_name", password="password")
